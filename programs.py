@@ -26,3 +26,37 @@ arr[:d] = reversed(arr[:d])
 arr[d:] = reversed(arr[d:])
 arr.reverse()
 print(arr)
+
+nearest prime
+n=10
+def is_prime(n):
+  if n<2:
+    return False
+  for i in range(2,int(n**0.5)+1):
+    if n%i==0:
+      return False
+  else:
+    return True
+def nearest_prime(n):
+  if is_prime(n):
+        return n
+  left=n-1
+  right=n+1
+  while True:
+    if left>=2 and is_prime(left):
+      return left
+    if right>=2 and is_prime(right):
+      return right
+    left-=1
+    right+=1
+
+
+
+
+
+
+
+
+  
+
+    
