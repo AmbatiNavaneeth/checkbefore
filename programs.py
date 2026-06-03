@@ -1,7 +1,15 @@
+longest palindromic substring
+longest palindorme can make from a string
+
 move zeros
+
 maj element
 nearest prime
 all permutations of strimg/list
+from itertools import permutations
+s = "ABC"
+for p in permutations(s):
+    print("".join(p))
 
 right rotation end to start
 d=4
