@@ -360,6 +360,65 @@ Testcase 1:
 Input: "abcabcbb"
 Output: 3
 
+# Convert Roman Numerals to Integer
+# Problem: Write a function to convert a Roman numeral string to an integer.
+# Testcase 1:
+# Input: "MCMXCIV"
+# Output: 1994
+# Symbol       Value
+# I             1
+# V             5
+# X             10
+# L             50
+# C             100
+# D             500
+# M             1000
+
+s="MCMXCIV"
+m={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+ans=0
+for i in range(len(s)):
+    if i+1<len(s) and m[s[i]]<m[s[i+1]]:
+        ans-=m[s[i]]
+    else:
+        ans+=m[s[i]]
+print(ans)
+
+
+# Check if Two Strings are Isomorphic
+# Problem: Write a function to check if two strings are isomorphic (each character in one string can be mapped to a character in the other string, preserving order).
+# Testcase 1:
+# Input: "egg", "add"
+# Output: true
+
+s="egg"
+t="add"  
+if len(s)!=len(t):
+    print(False)
+else:
+    s_t={}
+    t_s={}
+    for c1,c2 in zip(s,t):
+        if c1 in s_t and s_t[c1]!=c2:
+            print(False)
+        elif c2 in t_s and t_s[c2]!=c1:
+            print(False)
+        s_t[c1]=c2
+        t_s[c2]=c1
+    else:
+        print(True)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
