@@ -10,7 +10,7 @@ Class Method (with print)                  Inside a classobject.greet()   No, ju
 1. Outside a Class (Standalone Functions)When a function is not inside a class, you call it by writing its name followed by parentheses ().
 If the function uses return:The function calculates a value and hands it back to you silently. To see it on your screen, you must wrap the entire call inside a print() statement.python
 def get_hello():
-    return "Hello from outside!"  # Hands over data silently
+    return "Hello from outside!"  # Hands over data silently 
 # You must print the result to see it
 print(get_hello())  # Output: Hello from outside!
 
