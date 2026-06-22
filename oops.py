@@ -46,7 +46,7 @@ my_greeter = Greeter()
 # 2. Just call it directly
 my_greeter.show_welcome()  # Output: Welcome from inside a class!
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1. Encapsulation
 Wrapping data and methods into a single class and restricting direct access to data.
