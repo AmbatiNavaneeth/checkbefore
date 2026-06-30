@@ -310,7 +310,6 @@ Output: "world hello"
 s="hello world"
 ss=s.split()
 print(ss)
-ans=''
 res=[]
 for w in ss[::-1]:
     res.append(w) 
@@ -320,7 +319,6 @@ print(" ".join(res))
 s="hello world"
 ss=s.split()
 print(ss)
-ans=''
 res=[]
 for w in ss:
     res.append(w[::-1])  #olleh dlrow
