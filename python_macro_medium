@@ -1,28 +1,21 @@
 longest palindromic substring
 longest palindorme can make from a string
 
-anagram
+grouped anagram
 ----------------------------------------
 strs = ["eat","tea","tan","ate","nat","bat"]
-from collections import defaultdict
-def groupAnagrams(strs):
-    groups = defaultdict(list)
-    for s in strs:
-        key = ''.join(sorted(s))
-        groups[key].append(s)
-    return list(groups.values())
-strs = ["eat","tea","tan","ate","nat","bat"]
-print(groupAnagrams(strs))
+def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        groups={}
+        for word in strs:
+            key = "".join(sorted(word))
+            if key not in groups:
+                groups[key] = []
+            groups[key].append(word)
+        return list(groups.values())
 
-
-all permutations of strimg/list
----------------------------------
-from itertools import permutations
-s = "ABC"
-for p in permutations(s):
-    print("".join(p))
 
 right rotation end to start
+--------------------------------------------------------------------------------------------------------
 d=4
 arr=[1,2,3,4,5]
 d %= len(arr)
@@ -38,6 +31,7 @@ arr[-d:] + arr[:-d]
 arr[d:] + arr[:d]
 
 left rotation start to end 
+-------------------------------
 d=4
 arr=[1,2,3,4,5]
 d %= len(arr)
@@ -141,22 +135,6 @@ while mid<=high:
         high-=1
 print(nums)   
 
-Group Anagrams
-Problem: Write a function to group anagrams from an array of strings.
-Testcase 1:
-Input: ["eat", "tea", "tan", "ate", "nat", "bat"]
-Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
-------------------------------------------------------------------------------------------------
-strs = ["eat","tea","tan","ate","nat","bat"]
-from collections import defaultdict
-def groupAnagrams(strs):
-    groups = defaultdict(list)
-    for s in strs:
-        key = ''.join(sorted(s))
-        groups[key].append(s)
-    return list(groups.values())
-strs = ["eat","tea","tan","ate","nat","bat"]
-print(groupAnagrams(strs))
 
 Longest Increasing subsequence in an array.
 Testcase 1:
@@ -364,6 +342,10 @@ def permute(s,ans=""):
         permute(rem,ans+ch)
 permute("abc")
 
+from itertools import permutations
+s = "ABC"
+for p in permutations(s):
+    print("".join(p))
 
 Find the Longest Substring Without Repeating Characters
 Problem: Write a function to find the length of the longest substring without repeating characters.
@@ -493,6 +475,109 @@ b=1
 for i in range(7):
     print(a,end=" ")
     a,b=b,a+b
+
+
+Write a program that takes a number as input, print the sum of duplicate numbers in the given number.
+Testcase1	:  7473183
+Output     	:  10
+-----------------------------------------------------------------------------------------------
+x=76578922
+y=str(x)
+ans=""
+res=0
+for ch in y:
+    if ch in ans:
+        res+=int(ch)
+    else:
+        ans+=ch
+print(res)
+
+Write a program that takes array of numbers are input, print the second duplicate number and it’s occurrence.
+Testcase1	:  [ 64, 1, 2, 7, 79, 7, 7, 1, 22]
+Output     	:  Second duplicate number is 7 and it is occurred 3 times
+------------------------------------------------------------------------------------------------------------
+nums=[ 64, 1, 2, 7, 79, 7, 7, 1, 22]
+d={}
+for key in nums:
+    if key in d:
+        d[key]+=1
+    else:
+        d[key]=1
+print(d)
+ans=[]
+for i in d:
+    if d[i]>1:
+        ans.append(i)
+print(ans[1])
+
+
+Intersection of Two Arrays
+Problem: Write a function that returns the common elements between two arrays.
+Testcase 1:
+Input: [1, 2, 3], [2, 3, 4]
+Output: [2, 3]
+--------------------------------------------------------------------------------------------------------------------------------------  
+a=[1,2,3]
+b=[2,3,4]
+ans=[]
+for ch in a:
+    if ch in b:
+        ans.append(ch)
+print(ans)
+
+
+Find Missing Number
+Problem: Given an array of consecutive numbers with one missing, find the missing number.
+Testcase 1:
+Input: [1, 2, 4, 5]
+Output: [3]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+arr = [1, 2, 4, 5]
+n = len(arr) + 1
+expected_sum = n * (n + 1) // 2
+actual_sum = sum(arr)
+print(expected_sum - actual_sum)
+
+leetcode sol for fisrt missing positive
+def firstMissingPositive(self, nums: List[int]) -> int:
+            nums=set(nums)
+            i=1
+            while True:
+                if i not in nums:
+                    return i
+                i+=1
+
+
+Find the Maximum Product of Two Elements
+Problem: Write a function to find the maximum product of two elements in an array.
+Testcase 1:
+Input: [3, 5, -2, 8, 11]
+Output: 8 * 11 → 88
+----------------------------------------------------------------------------------------------------------
+nums=[3, 5, -2, 8, 11]
+f=float('-inf')
+s=float('-inf')
+for num in nums:
+    if num>f:
+        s=f
+        f=num
+    elif num>s and num!=f:
+        s=num
+print(f*s)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ----------Object-Based Questions-----------
 
