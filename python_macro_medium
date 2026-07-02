@@ -428,8 +428,73 @@ else:
     else:
         print(True)
 
+Binary Search Algorithm
+Problem: Write a function to perform binary search on a sorted array.
+Testcase 1:
+Input: [1, 2, 3, 4, 5], 3
+Output: 2 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+def binary_search(arr, target):
+    left = 0
+    right = len(arr) - 1
 
-Object-Based Questions
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1
+
+
+Check for Balanced Parentheses
+Problem: Write a function to check if a string of parentheses is balanced.
+Testcase 1:
+Input: "{[()]}"
+Output: true
+Testcase 2:
+Input: "{[(])}"
+Output: false
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def isValid(self, s: str):
+        stack=[]
+        matching={")":"(", ']':'[', "}":"{" }
+        for ch in s:
+            if ch in "{[(":
+                stack.append(ch)
+            elif ch in'})]':
+                if not stack:
+                    return False
+                top=stack.pop()
+                
+                if top!=matching[ch]:
+                    return False
+        return len(stack)==0
+
+Generate Fibonacci Sequence
+Problem: Write a function that generates the first n numbers in the Fibonacci sequence.
+Testcase 1:
+Input: 5
+Output: [0, 1, 1, 2, 3]
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+def print_fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+print_fibonacci(7)
+
+a=0
+b=1
+for i in range(7):
+    print(a,end=" ")
+    a,b=b,a+b
+
+----------Object-Based Questions-----------
 
 Deep Clone an Object
 Problem: Write a function to create a deep clone of an object.
