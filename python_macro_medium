@@ -18,17 +18,13 @@ right rotation end to start
 --------------------------------------------------------------------------------------------------------
 d=4
 arr=[1,2,3,4,5]
-d %= len(arr)
+d %= len(arr) 
 arr.reverse()
 arr[:d] = reversed(arr[:d])
 arr[d:] = reversed(arr[d:])
 print(arr)
 
-# Right rotation
-arr[-d:] + arr[:-d]
-
-# Left rotation
-arr[d:] + arr[:d]
+[5, 1, 2, 3, 4]
 
 left rotation start to end 
 -------------------------------
@@ -39,6 +35,8 @@ arr[:d] = reversed(arr[:d])
 arr[d:] = reversed(arr[d:])
 arr.reverse()
 print(arr)
+
+[2, 3, 4, 5, 1]
 
 nearest prime
 --------------------------
@@ -566,17 +564,49 @@ for num in nums:
 print(f*s)
 
 
+Longest Palindromic Substring
+input:"babad"
+Output:"bab"
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+def longestpalindrome(s):
+    #s="babad"
+    lon=""
+    for i in range(len(s)):
+        left=i
+        right=i
+        while left>=0 and right<len(s) and s[left]==s[right]:
+            if right-left+1> len(lon):
+                lon=s[left:right+1]
+            left-=1
+            right+=1
+        
+        left=i
+        right=i+1
+        while left>=0 and right<len(s) and s[left]==s[right]:
+            if right-left+1> len(lon):
+                lon=s[left:right+1]
+            left-=1
+            right+=1
+    return lon
+s="babad"
+print(longestpalindrome(s))
 
 
-
-
-
-
-
-
-
-
-
+Longest Substring Without Repeating Characters
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def lengthOfLongestSubstring(s):
+    charset=set()
+    l=0
+    res=0
+    for r in range(len(s)):
+        while s[r] in charset:
+            charset.remove(s[l])
+            l+=1
+        charset.add(s[r])
+        res=max(res,r-l+1)
+    return res
+s="delete"
+print(lengthOfLongestSubstring(s))
 
 
 ----------Object-Based Questions-----------
