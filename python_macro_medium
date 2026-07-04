@@ -4,7 +4,7 @@ longest palindorme can make from a string
 grouped anagram
 ----------------------------------------
 strs = ["eat","tea","tan","ate","nat","bat"]
-def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+def groupAnagrams(self, strs: List[str]) -> List[List[str]]:  
         groups={}
         for word in strs:
             key = "".join(sorted(word))
