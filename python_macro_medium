@@ -64,7 +64,7 @@ def nearest_prime(n):
 
 next primenumber
 --------------------------
-def palindrome(n):
+def prime(n):
     if n<2:
         return False
     for i in range(2,int(n**0.5)+1):
@@ -73,10 +73,10 @@ def palindrome(n):
     else:
         return True
 
-def NextPalindrome(n):
+def NextPrime(n):
     right=n+1
     while True:
-        if right>=2 and palindrome(right):
+        if right>=2 and prime(right):
             return right
         right+=1
 ------------------------------------------------------------------------------------------------
@@ -376,13 +376,6 @@ for i in range(len(s)):
     else:
         ans+=m[s[i]]
 print(ans)
-
-Find the Longest Palindromic Substring
-Problem: Write a function to find the longest palindromic substring in a given string.
-Testcase 1:
-Input: "babad"
-Output: "bab"
-----------------------------------------------------------------------------------------------
 
 
 # Check if Two Strings are Isomorphic
