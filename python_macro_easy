@@ -93,6 +93,7 @@ Explanation: The reverse of the string "hello" is "olleh". Each character's orde
 
 s="hello"
 print(s[::-1])
+
 ans=" "
 for ch in s:
     ans=ch+ans
