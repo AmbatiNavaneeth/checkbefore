@@ -602,6 +602,35 @@ def lengthOfLongestSubstring(s):
 s="delete"
 print(lengthOfLongestSubstring(s))
 
+Place even elements of an array at even indexes and odd at odd indexes
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+nums=[3, 6, 12, 1 ,5, 8, 8, 0, 0]
+n=len(nums)
+e=0
+o=1
+while e<n and o<n:
+    if nums[e]%2==0:
+        e+=2
+    elif nums[o]%2!=0:
+        o+=2
+    else:
+        nums[e],nums[o]=nums[o],nums[e]
+        e+=2
+        o+=2
+print(nums)
+
+Transpose the matrix
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+nums=[[1,2,3],[4,5,6],[7,8,9]]
+n=len(nums)
+for i in range(n):
+    for j in range(i+1,n):
+        nums[i][j],nums[j][i]=nums[j][i],nums[i][j]
+print(nums)
+
+
+
+
 
 ----------Object-Based Questions-----------
 
