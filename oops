@@ -104,19 +104,34 @@ Dog → Bark
 Cat → Meow
 Same method: sound()
 
-class Dog:
-    def sound(self):
-        print("Bark")
+class Laptop:
+    def boot(self):
+        return "Laptop: Booting OS and turning on the keyboard backlight."
 
-class Cat:
-    def sound(self):
-        print("Meow")
+class Television:
+    def boot(self):
+        return "TV: Powering up the OLED panel and loading Netflix."
 
-for animal in [Dog(), Cat()]:
-    animal.sound()   
+class Microwave:
+    def boot(self):
+        return "Microwave: Turning on the internal light and spinning the turntable."
 
-#Bark
-#Meow
+# This function demonstrates Polymorphism
+# It accepts ANY object and calls its 'boot' method without caring what type of device it is
+def press_power_button(device):
+    print(device.boot())
+
+# Creating different device objects
+my_laptop = Laptop()
+my_tv = Television()
+my_oven = Microwave()
+
+# Sending the same trigger to different objects
+press_power_button(my_laptop)  # Output: Laptop: Booting OS...
+press_power_button(my_tv)      # Output: TV: Powering up the OLED panel...
+press_power_button(my_oven)    # Output: Microwave: Turning on the internal light...
+
+
 "Polymorphism means one interface with multiple forms. For example, the sound() method produces different outputs for Dog and Cat."
 
 4. Abstraction
@@ -140,3 +155,21 @@ class Car(Vehicle):
 c = Car()
 c.start()
 #Car Started
+
+
+
+1. Inheritance (The "Family Tree" Concept)Inheritance is about passing down traits from a parent to a child to avoid starting from scratch.
+Real-Life Example: SmartphonesHow it works: Think of a basic cellular phone from the year 2000 as the Parent Class. It had core features like make_call() and send_sms().
+A modern iPhone or Android is the Child Class. It automatically inherits those basic calling and texting features from the old phone blueprint, but adds its own new features like surf_5G() and face_id().
+
+2. Polymorphism (The "One Name, Many Forms" Concept)Polymorphism allows the same trigger or action to behave differently depending on who or what is performing it.
+Real-Life Example: The "Power Button"How it works: You press the exact same action—a Power Button—on your laptop, your smartphone, your TV, and your microwave. However, the result is completely different for each device. 
+The laptop boots an OS, the TV turns on a display panel, and the microwave spins a turntable. One action yields many forms of output.
+
+3. Encapsulation (The "Protective Capsule" Concept)Encapsulation wraps data and behavior together inside a protective shield, hiding internal mechanics and preventing unauthorized direct tampering.
+Real-Life Example: A Medical Capsule or a Bank ATMHow it works: When you take a pill, the medicine is encapsulated inside a plastic shell. You don't interact with the raw chemical powder directly; you just swallow the capsule. 
+Similarly, with an ATM, your actual cash and account balance ledger are locked safely inside a vault. You cannot reach in and manually change your balance number. You must use the public interface (the keypad and screen) to safely interact with your money.
+
+4. Abstraction (The "Need-to-Know Basis" Concept)Abstraction hides complex background details and only shows the essential interface needed to use a system.
+Real-Life Example: Driving a CarHow it works: To drive a car, you only need to know how to use the steering wheel, the gas pedal, and the brake pedal. You do not need to understand internal combustion, how spark plugs fire, or how the transmission converts torque in real-time. 
+The complex mechanical engineering is abstracted away, leaving you with a simple, user-friendly interface.
