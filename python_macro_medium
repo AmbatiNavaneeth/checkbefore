@@ -1,3 +1,18 @@
+Pair Sum
+
+nums= [2, 4, 3, 5, 7, 8, 9]
+t=7
+map={}
+ans=[]
+for num in nums:
+  comp=t-num
+  if comp in map:
+    s=([comp,num])
+    ans.append(s)
+  map[num]=1
+print(ans)
+------------------------------------------------------------------------------------------------------------------------
+Second duplicate 
 n=[ 64, 1, 2, 7, 79, 7, 7, 1, 22]
 map={}
 for d in n:
@@ -111,13 +126,25 @@ for i in range(n-1):
 
 ------------------------------------------------------------------------------------------------
 
-nums= [1, [2, [3, [4]], 5]]
+nums= [[1,2],[3,4]
 ans=[]
 for i in range(len(nums)):
     for j in range(i):
         ans.append(i)
 print(ans)
 
+-------------------------------------------------------------------------------------
+Flatten nested list
+nums=[1, [2, [3, [4]], 5]]
+def flatten(nums):
+  ans=[]
+  for num in nums:
+    if(type(num) is list):
+      ans.extend(flatten(num))
+    else:
+      ans.append(num)
+  return ans
+print(flatten(nums))
 ------------------------------------------------------------------------------------------------
 SORT COLORS
 nums=[1,2,0,2,1,0]
