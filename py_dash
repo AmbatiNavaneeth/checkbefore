@@ -1,3 +1,10 @@
+checking power of 2
+n=32
+if n>0 and (n&(n-1))==0:
+  print(True)
+else:
+  print(False)
+---------------------------------------------------------------------------------------------------------------------------
 Total Chocolates From Wrapper Scheme
 money = 15
 cost = 1
