@@ -13,24 +13,29 @@ for num in nums:
 print(ans)
 ------------------------------------------------------------------------------------------------------------------------
 Second duplicate 
-n=[ 64, 1, 2, 7, 79, 7, 7, 1, 22]
-map={}
-for d in n:
-  if d in map:
-    map[d]+=1
-  else:
-    map[d]=1
-
+1. By Order of Appearance (Result: 7)
+nums=[ 64, 1, 2, 7, 79, 7, 7, 1, 22]
+seen=set()
 dup=[]
-for key,value in map.items():
-  if value>1:
-    dup.append((key,value))
+for num in nums:
+  if num in seen:
+    dup.append(num)
+    if len(dup)==2:
+      print(num)
+      break
+  seen.add(num)
 
-if len(dup)>1:
-  num,count=dup[1]
-  print(f"second dup element is {num} and its {count}")
-else:
-  print(f"no second dup element found")
+2. By Distinct Numbers (Result: 1)
+nums=[ 64, 1, 2, 7, 79, 7, 7, 1, 22]
+seen=set()
+dup=[]
+for num in nums:
+  if num in seen and num not in dup:
+    dup.append(num)
+    if len(dup)==2:
+      print(num)
+      break
+  seen.add(num)
 ------------------------------------------------------------------------
 grouped anagram
 ----------------------------------------
